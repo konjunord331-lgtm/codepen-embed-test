@@ -1,0 +1,8 @@
+---
+name: UGO Frame Bridge Test
+description: Loads the deployed UGO Worker inside a JSFiddle result iframe to test framing and public hosting compatibility
+authors:
+  - konjunord331-lgtm
+normalize_css: no
+load_type: d
+...
