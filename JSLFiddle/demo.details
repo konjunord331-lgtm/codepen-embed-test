@@ -1,0 +1,8 @@
+---
+name: JSLFiddle UGO Bridge
+description: Temporary JSFiddle media bridge to UGO public preview inb4-vb01
+authors:
+  - konjunord331-lgtm
+normalize_css: no
+load_type: d
+...
