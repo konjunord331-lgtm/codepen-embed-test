@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#181a38"/>
+      <stop offset="0.48" stop-color="#090b16"/>
+      <stop offset="1" stop-color="#030408"/>
+    </radialGradient>
+    <linearGradient id="chrome" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.28" stop-color="#86efff"/>
+      <stop offset="0.55" stop-color="#866cff"/>
+      <stop offset="0.8" stop-color="#ff5bbf"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="520" fill="url(#bg)"/>
+  <circle id="orbGlow" cx="910" cy="260" r="92" fill="#4ce7ff" opacity=".14" filter="url(#glow)"/>
+  <circle id="orb" cx="910" cy="260" r="54" fill="#7b5cff" stroke="#bffaff" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="895" cy="243" r="13" fill="white"/>
+  <rect x="140" y="110" width="920" height="300" rx="34" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".18"/>
+  <text x="190" y="190" fill="#a9f5ff" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="5">ARCHIVE CLEAN RENDER TEST</text>
+  <text x="190" y="285" fill="white" font-family="Arial, sans-serif" font-size="86" font-weight="900">VOID</text>
+  <text x="190" y="355" fill="url(#chrome)" font-family="Arial, sans-serif" font-size="86" font-weight="900">BLOOM</text>
+  <rect id="button" x="190" y="375" width="150" height="48" rx="24" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".25" style="cursor:pointer"/>
+  <text id="buttonText" x="265" y="405" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2" pointer-events="none">IGNITE</text>
+  <text id="status" x="900" y="385" fill="#77f4ca" font-family="Arial, sans-serif" font-size="13" letter-spacing="3">STABLE</text>
+  <script><![CDATA[
+    const orb=document.getElementById('orb');
+    const glow=document.getElementById('orbGlow');
+    const btn=document.getElementById('button');
+    const txt=document.getElementById('buttonText');
+    const status=document.getElementById('status');
+    let on=false, t=0;
+    function tick(){
+      t+=0.035;
+      const s=1+Math.sin(t)*0.055;
+      orb.setAttribute('transform',`translate(${910*(1-s)} ${260*(1-s)}) scale(${s})`);
+      glow.setAttribute('opacity', String(.10 + (.5+.5*Math.sin(t))*0.12));
+      requestAnimationFrame(tick);
+    }
+    btn.addEventListener('click',()=>{
+      on=!on;
+      orb.setAttribute('fill',on?'#ff4fb8':'#7b5cff');
+      txt.textContent=on?'STABILIZE':'IGNITE';
+      status.textContent=on?'OVERDRIVE':'STABLE';
+      status.setAttribute('fill',on?'#ff8bd2':'#77f4ca');
+    });
+    tick();
+  ]]></script>
+</svg>
