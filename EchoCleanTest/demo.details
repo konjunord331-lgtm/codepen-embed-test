@@ -1,0 +1,6 @@
+---
+name: JSFiddle Echo Clean Wrapper Test
+description: Tests replacing the public JSFiddle embed wrapper with a clean HTML echo response after a user click
+normalize_css: no
+load_type: d
+...
