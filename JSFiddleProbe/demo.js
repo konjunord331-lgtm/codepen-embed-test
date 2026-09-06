@@ -1,0 +1,1 @@
+document.getElementById('probe').textContent='JSFiddle GitHub import probe: JS loaded.';
