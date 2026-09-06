@@ -1,0 +1,8 @@
+---
+name: JSFiddle GitHub Probe
+description: Minimal public GitHub import test
+authors:
+  - konjunord331-lgtm
+normalize_css: no
+load_type: d
+...
