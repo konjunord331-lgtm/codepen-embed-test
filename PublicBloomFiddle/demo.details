@@ -1,0 +1,8 @@
+---
+name: VOID BLOOM — Public JSFiddle Demo
+description: Interactive cinematic bloom animation built with plain HTML, CSS and JavaScript.
+authors:
+  - konjunord331-lgtm
+normalize_css: no
+load_type: d
+...
